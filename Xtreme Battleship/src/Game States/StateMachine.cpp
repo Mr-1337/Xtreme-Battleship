@@ -54,6 +54,9 @@ void StateMachine::setState(GameState::StateRequest newState)
 	case GameState::STATE_LEVEL1:
 		stateStack.push(std::make_unique<Level1>(m_window));
 		break;
+	case GameState::STATE_LOBBY:
+		stateStack.push(std::make_unique<LobbyScreen>(m_window));
+		break;
 	}
 }
 

@@ -3,6 +3,7 @@
 Slider::Slider(SDL_Renderer* renderer) :
 	ButtonBase(renderer)
 {
+	m_sprite = new Sprite(renderer);
 	m_sprite->load("Assets/Graphics/slider.png");
 	wedge.w = 10;
 	wedge.h = 60;
@@ -16,7 +17,7 @@ void Slider::onHover()
 void Slider::update()
 {
 	int mx;
-	click();
+
 	if ((SDL_GetMouseState(&mx, nullptr) & SDL_BUTTON_LEFT) && mouseInBounds())
 	{
 		auto srcRect = m_sprite->getRect();

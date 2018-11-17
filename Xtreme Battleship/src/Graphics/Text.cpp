@@ -1,6 +1,6 @@
 #include "Text.h"
 
-Text::Text(SDL_Renderer* renderer, std::string message)
+Text::Text(SDL_Renderer* &renderer, std::string message)
 	:Sprite(renderer), m_string(message)
 {
 	

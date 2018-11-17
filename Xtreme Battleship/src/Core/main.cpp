@@ -1,8 +1,5 @@
 ﻿/*
-Created February 3rd 2017 by Mr. 1337
-This is my first real project that I have put a lot of thought and work into, and hopefully I can make something special
-This is also a spiritual successor to "platformgame.swf", an earlier project. Some of you may probably remember that abomination, but it was my first attempt at something like this.
-I know that this probably won't be the magnum opus that I'd really like it to be, but one can dream right?
+the most extreme variant of battleship you've ever seen
 */
 
 #include <iostream>
@@ -65,7 +62,7 @@ void shutdown();
 */
 int main(int argc, char* args[])
 {
-	std::cout << "Welcome to the console output for Just a Thought!" << std::endl << std::endl;
+	std::cout << "This is the console" << std::endl << std::endl;
 	
 	if (initializeLibs())
 	{
@@ -79,8 +76,8 @@ int main(int argc, char* args[])
 		}
 		std::cout << "Monitor Dimensions: " << bounds.w << " x " << bounds.h << std::endl;
 		GameSettings::setDimensions(800, 600);
-		GameEngine JaT("Just a Thought");
-		JaT.appLoop();
+		GameEngine bat("battleship");
+		bat.appLoop();
 	}
 	else
 	{

@@ -14,6 +14,10 @@ PauseMenu::PauseMenu(SDL_Window* window)
 	quit->setY(400);
 	menu->setX(375);
 	menu->setY(500);
+
+	menu->onClick = [this] { request.popPrev = true; request.state = STATE_TITLE; };
+	quit->onClick = [this] { request.state = STATE_QUIT; };
+
 	escape = true;
 	chunk = Mix_LoadMUS("Assets/Sound/mouth.ogg");
 	request.popCurrent = true;
@@ -66,13 +70,5 @@ void PauseMenu::update()
 	{
 		escape = false;
 	}
-	if (quit->click())
-	{
-		request.state = STATE_QUIT;
-	}
-	if (menu->click())
-	{
-		request.popPrev = true;
-		request.state = STATE_TITLE;
-	}
+
 }

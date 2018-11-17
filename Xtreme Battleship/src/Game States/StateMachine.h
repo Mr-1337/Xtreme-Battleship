@@ -8,6 +8,7 @@
 #include "Level1.h"
 #include "Editor.h"
 #include "PauseMenu.h"
+#include "LobbyScreen.h"
 #include "OptionScreen.h"
 
 //Houses all the different game states, facilitates their usage, and contains logic for switching

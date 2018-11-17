@@ -26,33 +26,6 @@ Enemy::~Enemy()
 
 void Enemy::draw()
 {
-	if (player.getX() < x)
-	{
-		pivot.x = 200;
-		angle = 180 / M_PI  * atan2((y - (player.getY())), (x - player.getX()));
-		leg.setFlip(SDL_FLIP_NONE);
-		top.setFlip(SDL_FLIP_NONE);
-	}	
-	else
-	{
-		pivot.x = 91;
-		angle = 180 / M_PI  * atan2((-y + (player.getY())), (-x + player.getX()));
-		leg.setFlip(SDL_FLIP_HORIZONTAL);
-		top.setFlip(SDL_FLIP_HORIZONTAL);
-	}
-
-	leg.draw();
-	top.rotate(angle, &pivot);
-	top.draw();
-	static float angle2;
-	if (timer.getTicks() > 500)
-	{
-		timer.restart();	
-	}
-	angle2 = atan2((float)(-shot.y + (player.getY())), (float)(-shot.x + player.getX()));
-	SDL_SetRenderDrawColor(renderer, 0, 127, 0, 255);
-	SDL_RenderFillRect(renderer, &shot);
-	shot.x += (4.0 * cos(angle2));
-	shot.y += (4.0 * sin(angle2));
+	
 
 } 

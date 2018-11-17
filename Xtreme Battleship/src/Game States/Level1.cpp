@@ -5,8 +5,6 @@ Level1::Level1(SDL_Window* window)
 {
 	escape = false;
 	gameWorld.load();
-	m_player = new Player(m_renderer, gameWorld, m_cam);
-
 }
 
 Level1::~Level1()
@@ -17,7 +15,7 @@ Level1::~Level1()
 
 void Level1::update()
 {
-	m_player->update();
+
 	const Uint8* keys = SDL_GetKeyboardState(NULL);
 
 	if (keys[SDL_SCANCODE_ESCAPE])
@@ -40,7 +38,6 @@ void Level1::draw()
 {
 	SDL_SetRenderDrawColor(m_renderer, 0xff, 0xff, 0xff, 0xff);
 	SDL_RenderClear(m_renderer);
-	m_player->draw();
 	gameWorld.draw();
 	SDL_RenderPresent(m_renderer);
 }

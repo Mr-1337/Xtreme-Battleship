@@ -3,7 +3,6 @@
 UIElement::UIElement(SDL_Renderer* renderer)
 	:m_renderer(renderer)
 {
-	m_sprite = new Sprite(renderer);
 }
 
 

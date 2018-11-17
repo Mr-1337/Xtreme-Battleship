@@ -1,12 +1,13 @@
 #pragma once
 #include "../Graphics/Sprite.h"
 #include "UIElement.h"
+#include <functional>
 class ButtonBase
 	:public UIElement
 {
 public:
 	ButtonBase(SDL_Renderer* renderer);
-	bool click();
+	std::function<void(void)> onClick;
 	virtual ~ButtonBase()=0;	
 
 protected:

@@ -5,6 +5,7 @@
 UIEditorBarButton::UIEditorBarButton(SDL_Renderer* renderer, std::string path)
 	:ButtonBase(renderer)
 {
+	m_sprite = new Sprite(renderer);
 	m_sprite->load(path);
 }
 

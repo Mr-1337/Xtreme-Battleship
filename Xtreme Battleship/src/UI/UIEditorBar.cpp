@@ -19,6 +19,12 @@ UIEditorBar::UIEditorBar(SDL_Renderer* renderer)
 	Hand = new UIEditorBarButton(renderer, "Assets/Graphics/hand.png");
 	Player = new UIEditorBarButton(renderer, "Assets/Graphics/guy.png");
 
+	File->onClick = [this] { currentTool = TOOL_FILE; };
+	Pencil->onClick = [this] { currentTool = TOOL_PENCIL; };
+	Eraser->onClick = [this] { currentTool = TOOL_ERASER; };
+	Hand->onClick = [this] { currentTool = TOOL_HAND; };
+	Player->onClick = [this] { currentTool = TOOL_PLAYER; };
+
 	children.push_back(File);
 	children.push_back(Pencil);
 	children.push_back(Eraser);
@@ -90,26 +96,7 @@ void UIEditorBar::update()
 	{
 		(*iter)->update();
 	}
-	if (File->click())
-	{
-		currentTool = TOOL_FILE;
-	}
-	if (Pencil->click())
-	{
-		currentTool = TOOL_PENCIL;
-	}
-	if (Eraser->click())
-	{
-		currentTool = TOOL_ERASER;
-	}
-	if (Hand->click())
-	{
-		currentTool = TOOL_HAND;
-	}
-	if (Player->click())
-	{
-		currentTool = TOOL_PLAYER;
-	}
+
 	switch (currentTool)
 	{
 	case TOOL_FILE:

@@ -3,28 +3,7 @@
 ButtonBase::ButtonBase(SDL_Renderer* renderer)
 	:UIElement(renderer), mDown(false)
 {
-}
-
-bool ButtonBase::click()
-{
-	if (SDL_BUTTON_LMASK & SDL_GetMouseState(&mX,&mY))
-	{
-		if (!mDown && mouseInBounds())
-		{
-			mDown = true;
-			return true;
-		}
-		else
-		{
-			mDown = true;
-			return false;
-		}
-	}
-	else
-	{
-		mDown = false;
-		return false;
-	}
+	onClick = [] { std::cout << "HEY IDIOT THIS BUTTON ISN'T BOUND TO ANYTHING" << std::endl; };
 }
 
 bool ButtonBase::mouseInBounds()
